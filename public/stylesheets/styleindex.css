@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(59, 59, 59);
+}
+#text{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    position: absolute;
+    top: 3%;
+    color: #f0d9b5;
+    font-size: 3.5vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+
+}
+.main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* align-items :center; */
+    justify-content: center;
+    position: absolute;
+    top: 15%;
+}
+
+.chessBoard {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+    width: 27vw;
+    height: 27vw;
+    transform: rotate(0deg);
+}
+.piece.white {
+    color: white;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+}
+.piece.black {
+    color: black;
+}
+.flipped {
+    transform: rotate(180deg);
+}
+
+.square.light {
+    background-color: #f0d9b5;
+}
+.square.dark {
+    background-color: #72b563;
+}
+.piece {
+    font-size: 2.35vw;
+    cursor: pointer;
+}
+.piece.draggable {
+    cursor: grab;
+}
+.dragging {
+    opacity: 0.5;
+}
+/* .square.highlight {
+    outline: 3px solid yellow;
+} */
+
+.flipped .piece {
+    transform: rotate(180deg);
+}
+.square {
+    transition: background-color 0.2s;
+}
+.square:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.piece:active {
+    opacity: 0.6;
+}
+.details{
+    display: flex;
+    justify-content: center;
+
+
+}
+.block{
+    position: absolute;
+    height: 18vh;
+    width: 40vw;
+    border: 2px solid #f0d9b5;
+    top: 75%;
+    border-radius: 10px;
+}
+#update{
+    font-size: 1.8vw;
+    display: flex;
+    justify-content: center;
+    color: #f0d9b5;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 100;
+    margin-bottom: 8px;
+}
+#l1{
+    color: #f0d9b5;
+    font-size: 1.3vw;
+    padding: 5px;
+    margin-left: 10px;
+}
+#l2{
+    color: #f0d9b5;
+    font-size: 1.3vw;
+    padding: 5px;
+    margin-left: 10px;
+}
+  /* Optional: Adjust font sizes on larger screens */
+@media (max-width: 600px) {
+    #text{
+        display: flex;
+        justify-content: center;
+    }
+     h1{
+        position: absolute;
+        top: 3%;
+        color: #f0d9b5;
+        font-size: 7vw;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 100;
+    
+    }
+    .main{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        /* align-items :center; */
+        justify-content: center;
+        position: absolute;
+        top: 15%;
+    }
+    
+    .chessBoard {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-template-rows: repeat(8, minmax(0, 1fr));
+        width: 65vw;
+        height: 65vw;
+        transform: rotate(0deg);
+    }
+    .piece.white {
+        color: white;
+        filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+    }
+    .piece.black {
+        color: black;
+    }
+    .flipped {
+        transform: rotate(180deg);
+    }
+    
+    .square.light {
+        background-color: #f0d9b5;
+    }
+    .square.dark {
+        background-color: #72b563;
+    }
+    .piece {
+        font-size: 6vw;
+        cursor: pointer;
+    }
+    .piece.draggable {
+        cursor: grab;
+    }
+    .dragging {
+        opacity: 0.5;
+    }
+    .flipped .piece {
+        transform: rotate(180deg);
+    }
+    .square {
+        transition: background-color 0.2s;
+    }
+    .square:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .piece:active {
+        opacity: 0.6;
+    }
+    .details{
+        display: flex;
+        justify-content: center;
+    
+    
+    }
+    .block{
+        position: absolute;
+        height: 18vh;
+        width: 60vw;
+        border: 2px solid #f0d9b5;
+        top: 75%;
+        border-radius: 10px;
+    }
+    #update{
+        font-size: 7vw;
+        display: flex;
+        justify-content: center;
+        color: #f0d9b5;
+        font-family:'Courier New', Courier, monospace;
+        /* font-weight: 100; */
+        margin-bottom: 8px;
+    }
+    #l1{
+        color: #f0d9b5;
+        font-size: 5vw;
+        padding: 5px;
+        margin-left: 10px;
+    }
+    #l2{
+        color: #f0d9b5;
+        font-size: 5vw;
+        padding: 5px;
+        margin-left: 10px;
+    }
+    /* .square.highlight {
+        outline: 3px solid yellow;
+    } */
+    
+}
+  
